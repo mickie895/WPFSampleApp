@@ -1,0 +1,24 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ClickCheckSample.View"
+             xmlns:ViewModels="clr-namespace:ClickCheckSample.ViewModels" x:Class="ClickCheckSample.View.Counter"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <StackPanel>
+        <StackPanel.DataContext>
+            <ViewModels:CounterViewModel/>
+        </StackPanel.DataContext>
+        <StackPanel Orientation="Horizontal">
+            <Label x:Name="label" Content="クリック数" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+            <Label x:Name="label1" Content="{Binding ClickCounter, Mode=OneWay}" Margin="10,10,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <Label x:Name="label2" Content="総クリック数" Margin="10,10,0,0"/>
+            <Label x:Name="label3" Content="{Binding AllClickCounter, Mode=OneWay}" Margin="10,10,0,0"/>
+        </StackPanel>
+
+    </StackPanel>
+</UserControl>
